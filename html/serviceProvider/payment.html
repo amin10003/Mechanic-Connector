@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mechanic Connector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="overflow-x-hidden p-10">
+    <div
+      class="min-h-screen p-6 rounded-lg bg-gray-100 my-10 grid grid-cols-[250px_1fr] grid-rows-[auto_1fr]"
+    >
+      <!-- Sidebar -->
+      <aside class="row-span-2 bg-gray-200 p-6 flex flex-col justify-start g-6">
+        <span class="font-semibold text-xl">Acccount</span>
+        <nav class="row-auto flex flex-col gap-4 mt-6">
+          <div class="font-semibold text-xl">
+            <a href="/html/serviceProvider/dashboard.html">Dashboard</a>
+          </div>
+          <div class="font-semibold text-xl">
+            <a href="/html/serviceProvider/tasks.html">Tasks</a>
+          </div>
+          <div class="font-semibold text-xl">
+            <a href="/html/serviceProvider/employees.html">Employees</a>
+          </div>
+          <div class="font-semibold text-xl">
+            <a href="/html/serviceProvider/services.html">Services</a>
+          </div>
+          <div class="font-semibold text-xl">
+            <a href="/html/serviceProvider/payment.html">Payment</a>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Header -->
+      <header
+        class="col-start-2 row-start-1 bg-gray-500 text-white flex justify-between items-center px-6 py-3"
+      >
+        <div class="flex gap-4">
+          <h1>
+            Hello
+            <h2>Mohamed</h2>
+          </h1>
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="search"
+            class="rounded-xl p-2 focus:outline-none text-black text-xl focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <span> toggle </span>
+          <span> notification </span>
+        </div>
+      </header>
+
+
+
+      <!-- Main -->
+      <main
+        class="col-start-2 row-start-2 bg-gray-100 overflow-y-scroll h-full"
+      >
+      <section class="p-6 flex flex-col gap-6">
+
+  <!-- ================= HEADER ================= -->
+  <div class="flex justify-between items-center w-full">
+    <h1 class="text-2xl font-bold">Payments & Earnings</h1>
+
+    <!-- Optional: future export -->
+    <!-- <button class="bg-gray-700 text-white px-4 py-2 rounded-lg">
+      Export Report
+    </button> -->
+  </div>
+
+  <!-- ================= SUMMARY CARDS ================= -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Total Earnings -->
+    <div class="bg-white p-6 rounded-xl shadow">
+      <p class="text-gray-500">Total Earnings</p>
+      <h2 class="text-2xl font-bold">KSh 45,000</h2>
+    </div>
+
+    <!-- Pending Payments -->
+    <div class="bg-white p-6 rounded-xl shadow">
+      <p class="text-gray-500">Pending Payments</p>
+      <h2 class="text-2xl font-bold text-yellow-500">KSh 8,000</h2>
+    </div>
+
+    <!-- Completed Payments -->
+    <div class="bg-white p-6 rounded-xl shadow">
+      <p class="text-gray-500">Completed Payments</p>
+      <h2 class="text-2xl font-bold text-green-600">KSh 37,000</h2>
+    </div>
+
+  </div>
+
+  <!-- ================= FILTER / SEARCH ================= -->
+  <div class="flex justify-between items-center gap-4">
+
+    <!-- Search -->
+    <input
+      type="text"
+      placeholder="Search by service or customer..."
+      class="p-2 border rounded-lg w-full max-w-md"
+    />
+
+    <!-- Filter -->
+    <select class="p-2 border rounded-lg">
+      <option value="">All</option>
+      <option value="paid">Paid</option>
+      <option value="pending">Pending</option>
+    </select>
+
+  </div>
+
+  <!-- ================= PAYMENTS TABLE ================= -->
+  <div class="bg-white rounded-xl shadow overflow-x-auto w-full">
+
+    <table class="w-full text-left">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="p-3">Date</th>
+          <th class="p-3">Service</th>
+          <th class="p-3">Customer</th>
+          <th class="p-3">Amount</th>
+          <th class="p-3 text-center">Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <!-- Example Row -->
+        <tr class="border-t">
+          <td class="p-3">12 Apr 2026</td>
+          <td class="p-3">Engine Repair</td>
+          <td class="p-3">Ahmed Ali</td>
+          <td class="p-3">KSh 15,000</td>
+
+          <td class="p-3 text-center">
+            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+              Paid
+            </span>
+          </td>
+        </tr>
+
+        <!-- Another Row -->
+        <tr class="border-t">
+          <td class="p-3">14 Apr 2026</td>
+          <td class="p-3">Oil Change</td>
+          <td class="p-3">John Doe</td>
+          <td class="p-3">KSh 2,000</td>
+
+          <td class="p-3 text-center">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">
+              Pending
+            </span>
+          </td>
+        </tr>
+
+        <!-- Dynamic rows go here -->
+
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- ================= EMPTY STATE ================= -->
+  <!-- Show this if no payments -->
+  <!--
+  <p class="text-center text-gray-500">
+    No payment records yet.
+  </p>
+  -->
+
+</section>
+    </main>
+    </div>
+  </body>
+</html>
