@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mechanic Connector</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="/src/images.js"></script>
+    <!-- Refactor note: centralized JS entry point for page/module loading -->
+    <script type="module" src="/js/main.js"></script>
   </head>
   <body class="overflow-x-hidden p-10">
     <div
@@ -53,7 +54,7 @@
           class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6"
         >
           <div
-            class="card rounded-md bg-white shadow-md card rounded-md bg-white shadow-md overflow-hidden flex flex-col"
+            class="card imagesCard rounded-md bg-white shadow-md overflow-hidden flex flex-col"
           >
             <img class="w-full h-48 object-cover" />
             <div class="p-4 flex flex-col justify-between items-center">
@@ -67,7 +68,7 @@
             </div>
           </div>
           <div
-            class="card rounded-md bg-white shadow-md card rounded-md bg-white shadow-md overflow-hidden flex flex-col"
+            class="card imagesCard rounded-md bg-white shadow-md overflow-hidden flex flex-col"
           >
             <img class="w-full h-48 object-cover" />
             <div class="p-4 flex flex-col justify-between items-center">
@@ -81,7 +82,7 @@
             </div>
           </div>
           <div
-            class="card rounded-md bg-white shadow-md card rounded-md bg-white shadow-md overflow-hidden flex flex-col"
+            class="card imagesCard rounded-md bg-white shadow-md overflow-hidden flex flex-col"
           >
             <img class="w-full h-48 object-cover" />
             <div class="p-4 flex flex-col justify-between items-center">
@@ -95,7 +96,7 @@
             </div>
           </div>
           <div
-            class="card rounded-md bg-white shadow-md card rounded-md bg-white shadow-md overflow-hidden flex flex-col"
+            class="card imagesCard rounded-md bg-white shadow-md overflow-hidden flex flex-col"
           >
             <img class="w-full h-48 object-cover" />
             <div class="p-4 flex flex-col justify-between items-center">
@@ -109,22 +110,7 @@
             </div>
           </div>
           <div
-            class="card rounded-md bg-white shadow-md card rounded-md bg-white shadow-md overflow-hidden flex flex-col"
-          >
-            <img class="w-full h-48 object-cover" />
-            <div class="p-4 flex flex-col justify-between items-center">
-              <h3 class="font-semibold text-xl">Service Title</h3>
-              <p class="font-medium">Service Description here</p>
-              <button
-                class="text-white bg-blue-500 px-4 py-2 rounded-lg font-bold mt-2"
-              >
-                Request Service
-              </button>
-            </div>
-          </div>
-
-          <div
-            class="card rounded-md bg-white shadow-md card rounded-md bg-white shadow-md overflow-hidden flex flex-col"
+            class="card imagesCard rounded-md bg-white shadow-md overflow-hidden flex flex-col"
           >
             <img class="w-full h-48 object-cover" />
             <div class="p-4 flex flex-col justify-between items-center">
@@ -139,7 +125,7 @@
           </div>
 
           <div
-            class="card rounded-md bg-white shadow-md card rounded-md bg-white shadow-md overflow-hidden flex flex-col"
+            class="card imagesCard rounded-md bg-white shadow-md overflow-hidden flex flex-col"
           >
             <img class="w-full h-48 object-cover" />
             <div class="p-4 flex flex-col justify-between items-center">
@@ -154,7 +140,22 @@
           </div>
 
           <div
-            class="card rounded-md bg-white shadow-md card rounded-md bg-white shadow-md overflow-hidden flex flex-col"
+            class="card imagesCard rounded-md bg-white shadow-md overflow-hidden flex flex-col"
+          >
+            <img class="w-full h-48 object-cover" />
+            <div class="p-4 flex flex-col justify-between items-center">
+              <h3 class="font-semibold text-xl">Service Title</h3>
+              <p class="font-medium">Service Description here</p>
+              <button
+                class="text-white bg-blue-500 px-4 py-2 rounded-lg font-bold mt-2"
+              >
+                Request Service
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="card imagesCard rounded-md bg-white shadow-md overflow-hidden flex flex-col"
           >
             <img class="w-full h-48 object-cover" />
             <div class="p-4 flex flex-col justify-between items-center">

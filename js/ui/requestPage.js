@@ -1,18 +1,5 @@
-// ================= GET SERVICE FROM URL =================
-const params = new URLSearchParams(window.location.search);
-const service = params.get("service");
+// Refactor note: original request page UI logic moved to js/modules/ui/requestPage.js.
+// This compatibility file keeps the original path usable if referenced elsewhere.
+import { initRequestPage } from "/js/modules/ui/requestPage.js";
 
-// ================= SELECT H2 =================
-const serviceHeading = document.getElementById("selectedService"); // FIXED ID MATCH
-
-// ================= UPDATE UI =================
-if (serviceHeading) {
-  // safety check
-  if (service) {
-    serviceHeading.textContent = `Selected Service: ${service}`;
-  } else {
-    serviceHeading.textContent = "Selected Service: Not specified";
-  }
-}
-
-console.log(serviceHeading);
+initRequestPage();

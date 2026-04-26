@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mechanic Connector</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="/js/Services/requestService.js"></script>
-    <script defer src="/js/ui/requestPage.js"></script>
-
-    <!-- FIX: make sure JS loads after DOM -->
-    <script defer src="/src/images.js"></script>
+    <!-- Refactor note: centralized JS entry point for page/module loading -->
+    <script type="module" src="/js/main.js"></script>
   </head>
 
   <body>
@@ -54,13 +51,13 @@
             </div>
 
             <div>
-              <label for="VehicleTYpe" class="font-semibold text-2xl"
+              <label for="VehicleType" class="font-semibold text-2xl"
                 >Vehicle Type</label
               >
               <input
                 placeholder="Track"
-                id="VehicleTYpe"
-                type="VehicleTYpe"
+                id="VehicleType"
+                type="text"
                 class="p-2 w-full rounded"
                 required
               />
@@ -72,9 +69,9 @@
               >
               <input
                 id="NumberPlate"
-                type="number"
+                type="text"
                 class="p-2 w-full rounded"
-                required
+                
               />
             </div>
 
