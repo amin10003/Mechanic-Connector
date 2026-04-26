@@ -1,4 +1,7 @@
 // Refactor note: moved provider authentication code from js/models/providerLog.js
+
+import { load, save } from "../../storage/storage";
+
 // This file exists to isolate provider auth flow from other page logic.
 export function initProviderAuth() {
   const registerAnchor = document.getElementById("RegisterAnchor");
@@ -68,7 +71,7 @@ export function initProviderAuth() {
 
     console.log(provider);
 
-    localStorage.setItem("providers", JSON.stringify(provider));
+    save("providers", provider);
 
     console.log("Saved:", provider);
 
@@ -88,14 +91,14 @@ export function initProviderAuth() {
       password: logPass,
     };
 
-    const getSavedProvider = localStorage.getItem("providers");
+    const getSavedProvider = load("providers");
 
     if (!getSavedProvider) {
       alert("No user found. Please register first.");
       return;
     }
 
-    const savedProviderData = JSON.parse(getSavedProvider);
+    const savedProviderData = getSavedProvider;
 
     console.log("LOGIN:", loginProvider);
     console.log("SAVED:", savedProviderData);
@@ -108,7 +111,10 @@ export function initProviderAuth() {
       return;
     }
 
-    console.log("email match:", loginProvider.email === savedProviderData.email);
+    console.log(
+      "email match:",
+      loginProvider.email === savedProviderData.email,
+    );
     console.log(
       "password match:",
       loginProvider.password === savedProviderData.password,

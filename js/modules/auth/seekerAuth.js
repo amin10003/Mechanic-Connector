@@ -1,5 +1,7 @@
 // Refactor note: moved seeker authentication code from js/models/seekerLog.js
 // This file exists to keep registration/login logic isolated by responsibility.
+import { load, save } from "../../storage/storage";
+
 export function initSeekerAuth() {
   const registerAnchor = document.getElementById("registerAnchor");
   const loginAnchor = document.getElementById("loginAnchor");
@@ -63,7 +65,7 @@ export function initSeekerAuth() {
       service: serviceInput,
     };
 
-    localStorage.setItem("seekers", JSON.stringify(seeker));
+    save("seekers", seeker);
 
     alert("Registration successful");
 
@@ -81,14 +83,14 @@ export function initSeekerAuth() {
       password: logPass,
     };
 
-    const getSavedseeker = localStorage.getItem("seekers");
+    const getSavedseeker = load("seekers");
 
     if (!getSavedseeker) {
       alert("No user found. Please register first.");
       return;
     }
 
-    const savedseekerData = JSON.parse(getSavedseeker);
+    const savedseekerData = getSavedseeker;
 
     console.log("LOGIN:", loginseeker);
     console.log("SAVED:", savedseekerData);

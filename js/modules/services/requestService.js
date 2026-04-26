@@ -40,12 +40,10 @@ export function initRequestService() {
       landmark,
     };
 
-    // const existing = JSON.parse(localStorage.getItem("Request Details")) || [];
     const existing = load("Request Details") || [];
 
     existing.push(requestInfo);
 
-    // localStorage.setItem(, JSON.stringify());
     save("Request Details", existing);
     RequestForm.reset();
   });
@@ -55,7 +53,5 @@ export function initRequestService() {
 
 // Function name kept exactly the same as original code.
 function getRequestInfo() {
-  // const getInfo = localStorage.getItem("Request Details");
-  // const parsedrequestInfo = JSON.parse(getInfo);
   return load("Request Details");
 }
