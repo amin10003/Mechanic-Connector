@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mechanic Connector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="/js/Services/requestService.js"></script>
+    <script defer src="/js/ui/requestPage.js"></script>
+
+    <!-- FIX: make sure JS loads after DOM -->
+    <script defer src="/src/images.js"></script>
+  </head>
+
+  <body>
+    <div
+      id="cont"
+      class="min-h-screen p-6 m-0 text-xl bg-gray-100 flex flex-col justify-center items-center"
+    >
+      <div
+        class="block mx-auto bg-gray-200 p-6 shadow-xl rounded-md flex flex-col justify-between items-center"
+      >
+        <h1 class="text-4xl font-bold text-center">Service Request Form</h1>
+        <h2
+          id="selectedService"
+          class="text-2xl text-purple-500 font-bold text-center text-[#333] my-4"
+        >
+          Selected Service
+        </h2>
+
+        <!-- ================= Service Request Form ================= -->
+        <section id="RequestFormSection">
+          <form id="RequestForm" class="grid grid-cols-2 gap-8 p-4 mt-4">
+            <div>
+              <label for="VehicleModel" class="font-semibold text-2xl"
+                >Vehicle Model</label
+              >
+              <input
+                placeholder="Toyota"
+                id="VehicleModel"
+                type="text"
+                class="p-2 w-full rounded"
+                required
+              />
+            </div>
+            <div>
+              <label for="Urgency" class="font-semibold text-2xl"
+                >Urgency</label
+              >
+              <select id="Urgency" class="p-2 w-full rounded">
+                <option value="normal">Normal</option>
+                <option value="urgent">urgent</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="VehicleTYpe" class="font-semibold text-2xl"
+                >Vehicle Type</label
+              >
+              <input
+                placeholder="Track"
+                id="VehicleTYpe"
+                type="VehicleTYpe"
+                class="p-2 w-full rounded"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="NumberPlate" class="font-semibold text-2xl"
+                >Number Plate</label
+              >
+              <input
+                id="NumberPlate"
+                type="number"
+                class="p-2 w-full rounded"
+                required
+              />
+            </div>
+
+            <div>
+              <div>
+                <label class="font-semibold text-2xl">Location</label>
+                <select id="Location" class="p-2 w-full rounded">
+                  <option value="nairobi">Nairobi</option>
+                  <option value="Mandera">Mandera</option>
+                  <option value="garissa">Garissa</option>
+                  <option value="nakuru">Nakuru</option>
+                  <option value="mombasa">Mombasa</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="font-semibold text-2xl">Landmark</label>
+              <input
+                placeholder="e.g., “Near Shell petrol station”"
+                id="Landmark"
+                type="text"
+                class="p-2 w-full rounded"
+                required
+              />
+            </div>
+
+            <div class="col-span-2">
+              <label class="font-semibold text-2xl">Problem Description</label>
+              <textarea
+                name="problemDescription"
+                class="p-2 w-full rounded"
+                id="problemDescription"
+              ></textarea>
+            </div>
+
+            <button
+              class="bg-blue-500 hgover:scale-(75) transition-all transform duration-200 hover:bg-blue-600 text-white py-2 rounded"
+            >
+              Submit
+            </button>
+            <button
+              class="bg-blue-500 text-white py-2 rounded hover:bg-red-800"
+            >
+              Cancel
+            </button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
