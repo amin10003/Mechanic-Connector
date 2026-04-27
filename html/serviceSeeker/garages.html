@@ -1,10 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mechanic Connector</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="overflow-x-hidden p-10">
@@ -15,12 +14,15 @@
         class="row-span-2 bg-gray-200 p-6 flex flex-col justify-start g-6 ">
         <span class=" font-semibold text-xl">Acccount</span>
         <nav class="row-auto flex flex-col gap-4 mt-6">
-          <div class="font-semibold text-xl"><a
-              href="/html/serviceSeeker/dashboard.html">Dashboard</a></div>
-          <div class="font-semibold text-xl"><a
-              href="/html/serviceSeeker/garages.html">Garages</a></div>
-          <div class="font-semibold text-xl"><a href="/html/serviceSeeker/services.html">Services</a></div>
-
+          <div class="font-semibold text-xl">
+            <a href="/html/serviceSeeker/dashboard.html">Dashboard</a>
+          </div>
+          <div class="font-semibold text-xl">
+            <a href="/html/serviceSeeker/garages.html">Garages</a>
+          </div>
+          <div class="font-semibold text-xl">
+            <a href="/html/serviceSeeker/services.html">Services</a>
+          </div>
         </nav>
       </aside>
       <header
@@ -41,7 +43,201 @@
       </header>
       <main
         class="col-start-2 row-start-2 bg-gray-100 overflow-y-scroll h-full">
-        main
-      </main>
-    </body>
-  </html>
+        <section id="garageSecion"
+          class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
+          <div  class="card border garage-cards shadow-md shadow-[#333] rounded-md">
+
+            <img src="/src/mordernGarage.jpg" alt="garage-image"
+              class="rounded-t-md w-full object-cover">
+            <h1 class="text-center font-bold my-2 text-xl">Almiskad</h1>
+            <div class="font-semibold text-center">descripton details here</div>
+            <div id="garageServicesList">
+              <ul id="service-list"></ul>
+            </div>
+
+            <!-- <div id="garageLocation" class="">
+              <img src="/src/garageMap.jpg" alt="garageMap" class="object-cover w-ful h-full">
+            </div> -->
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-xl mt-4 mb-2 text-white block mx-auto">View More</button>
+
+          </div>
+
+           <div class="card garage-cards border shadow-md shadow-[#333] rounded-md">
+
+            <img src="/src/mordernGarage.jpg" alt="garage-image"
+              class="rounded-t-md w-full object-cover">
+            <h1 class="text-center font-bold my-2 text-xl">Almiskad</h1>
+            <div class="font-semibold text-center">descripton details here</div>
+            <div id="garageServicesList">
+              <ul id="service-list"></ul>
+            </div>
+
+            <!-- <div id="garageLocation" class="">
+              <img src="/src/garageMap.jpg" alt="garageMap" class="object-cover w-ful h-full">
+            </div> -->
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-xl mt-4 mb-2 text-white block mx-auto">View More</button>
+
+          </div>
+          <div class="card garage-cards border shadow-md shadow-[#333] rounded-md">
+
+            <img src="/src/mordernGarage.jpg" alt="garage-image"
+              class="rounded-t-md w-full object-cover">
+            <h1 class="text-center font-bold my-2 text-xl">Almiskad</h1>
+            <div class="font-semibold text-center">descripton details here</div>
+            <div id="garageServicesList">
+              <ul id="service-list"></ul>
+            </div>
+
+            <!-- <div id="garageLocation" class="">
+              <img src="/src/garageMap.jpg" alt="garageMap" class="object-cover w-ful h-full">
+            </div> -->
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-xl mt-4 mb-2 text-white block mx-auto">View More</button>
+
+          </div>
+          <div class="card garage-cards border shadow-md shadow-[#333] rounded-md">
+
+            <img src="/src/mordernGarage.jpg" alt="garage-image"
+              class="rounded-t-md w-full object-cover">
+            <h1 class="text-center font-bold my-2 text-xl">Almiskad</h1>
+            <div class="font-semibold text-center">descripton details here</div>
+            <div id="garageServicesList">
+              <ul id="service-list"></ul>
+            </div>
+
+            <!-- <div id="garageLocation" class="">
+              <img src="/src/garageMap.jpg" alt="garageMap" class="object-cover w-ful h-full">
+            </div> -->
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-xl mt-4 mb-2 text-white block mx-auto">View More</button>
+
+          </div>
+          <div class="card garage-cards border shadow-md shadow-[#333] rounded-md">
+
+            <img src="/src/mordernGarage.jpg" alt="garage-image"
+              class="rounded-t-md w-full object-cover">
+            <h1 class="text-center font-bold my-2 text-xl">Almiskad</h1>
+            <div class="font-semibold text-center">descripton details here</div>
+            <div id="garageServicesList">
+              <ul id="service-list"></ul>
+            </div>
+
+            <!-- <div id="garageLocation" class="">
+              <img src="/src/garageMap.jpg" alt="garageMap" class="object-cover w-ful h-full">
+            </div> -->
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-xl mt-4 mb-2 text-white block mx-auto">View More</button>
+
+          </div>
+          <div class="card garage-cards border shadow-md shadow-[#333] rounded-md">
+
+            <img src="/src/mordernGarage.jpg" alt="garage-image"
+              class="rounded-t-md w-full object-cover">
+            <h1 class="text-center font-bold my-2 text-xl">Almiskad</h1>
+            <div class="font-semibold text-center">descripton details here</div>
+            <div id="garageServicesList">
+              <ul id="service-list"></ul>
+            </div>
+
+            <!-- <div id="garageLocation" class="">
+              <img src="/src/garageMap.jpg" alt="garageMap" class="object-cover w-ful h-full">
+            </div> -->
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-xl mt-4 mb-2 text-white block mx-auto">View More</button>
+
+          </div>
+             <div class="card garage-cards border shadow-md shadow-[#333] rounded-md">
+
+            <img src="/src/mordernGarage.jpg" alt="garage-image"
+              class="rounded-t-md w-full object-cover">
+            <h1 class="text-center font-bold my-2 text-xl">Almiskad</h1>
+            <div class="font-semibold text-center">descripton details here</div>
+            <div id="garageServicesList">
+              <ul id="service-list"></ul>
+            </div>
+
+            <!-- <div id="garageLocation" class="">
+              <img src="/src/garageMap.jpg" alt="garageMap" class="object-cover w-ful h-full">
+            </div> -->
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-xl mt-4 mb-2 text-white block mx-auto">View More</button>
+
+          </div>
+             <div class="card garage-cards border shadow-md shadow-[#333] rounded-md">
+
+            <img src="/src/mordernGarage.jpg" alt="garage-image"
+              class="rounded-t-md w-full object-cover">
+            <h1 class="text-center font-bold my-2 text-xl">Almiskad</h1>
+            <div class="font-semibold text-center">descripton details here</div>
+            <div id="garageServicesList">
+              <ul id="service-list"></ul>
+            </div>
+
+            <!-- <div id="garageLocation" class="">
+              <img src="/src/garageMap.jpg" alt="garageMap" class="object-cover w-ful h-full">
+            </div> -->
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-xl mt-4 mb-2 text-white block mx-auto">View More</button>
+
+          </div>
+             <div class="card garage-cards border shadow-md shadow-[#333] rounded-md">
+
+            <img src="/src/mordernGarage.jpg" alt="garage-image"
+              class="rounded-t-md w-full object-cover">
+            <h1 class="text-center font-bold my-2 text-xl">Almiskad</h1>
+            <div class="font-semibold text-center">descripton details here</div>
+            <div id="garageServicesList">
+              <ul id="service-list"></ul>
+            </div>
+
+            <!-- <div id="garageLocation" class="">
+              <img src="/src/garageMap.jpg" alt="garageMap" class="object-cover w-ful h-full">
+            </div> -->
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-xl mt-4 mb-2 text-white block mx-auto">View More</button>
+
+          </div>
+             <div class="card garage-cards border shadow-md shadow-[#333] rounded-md">
+
+            <img src="/src/mordernGarage.jpg" alt="garage-image"
+              class="rounded-t-md w-full object-cover">
+            <h1 class="text-center font-bold my-2 text-xl">Almiskad</h1>
+            <div class="font-semibold text-center">descripton details here</div>
+            <div id="garageServicesList">
+              <ul id="service-list"></ul>
+            </div>
+
+            <!-- <div id="garageLocation" class="">
+              <img src="/src/garageMap.jpg" alt="garageMap" class="object-cover w-ful h-full">
+            </div> -->
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-xl mt-4 mb-2 text-white block mx-auto">View More</button>
+
+          </div>
+             <div class="card garage-cards border shadow-md shadow-[#333] rounded-md">
+
+            <img src="/src/mordernGarage.jpg" alt="garage-image"
+              class="rounded-t-md w-full object-cover">
+            <h1 class="text-center font-bold my-2 text-xl">Almiskad</h1>
+            <div class="font-semibold text-center">descripton details here</div>
+            <div id="garageServicesList">
+              <ul id="service-list"></ul>
+            </div>
+
+            <!-- <div id="garageLocation" class="">
+              <img src="/src/garageMap.jpg" alt="garageMap" class="object-cover w-ful h-full">
+            </div> -->
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-xl mt-4 mb-2 text-white block mx-auto">View More</button>
+
+          </div>
+             <div class="card garage-cards border shadow-md shadow-[#333] rounded-md">
+
+            <img src="/src/mordernGarage.jpg" alt="garage-image"
+              class="rounded-t-md w-full object-cover">
+            <h1 class="text-center font-bold my-2 text-xl">Almiskad</h1>
+            <div class="font-semibold text-center">descripton details here</div>
+            <div id="garageServicesList">
+              <ul id="service-list"></ul>
+            </div>
+
+            <!-- <div id="garageLocation" class="">
+              <img src="/src/garageMap.jpg" alt="garageMap" class="object-cover w-ful h-full">
+            </div> -->
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-xl mt-4 mb-2 text-white block mx-auto">View More</button>
+
+          </div>
+        </main>
+      </body>
+    </html>
