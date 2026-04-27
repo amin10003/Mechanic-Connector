@@ -1,17 +1,13 @@
-// Refactor note: central entry point for page-specific initializers.
-// This file exists to keep script loading simple and scalable without changing behavior.
-import { initSeekerAuth } from "/js/modules/auth/seekerAuth.js";
-import { initProviderAuth } from "/js/modules/auth/providerAuth.js";
-import { initRequestService } from "/js/modules/services/requestService.js";
-import { initRequestPage } from "/js/modules/ui/requestPage.js";
-import { fetchImages } from "/js/modules/services/imagesService.js";
+import { initSeekerAuth } from "/js/auth/seekerAuth.js";
+import { initProviderAuth } from "/js/auth/providerAuth.js";
+import { initSeekerServicesPage } from "/js/ui/seekerServicesPage.js";
+import { initSeekerRequestPage } from "/js/ui/seekerRequestPage.js";
+import { initProviderTasksPage } from "/js/ui/providerTasksPage.js";
 
 initSeekerAuth();
 initProviderAuth();
-initRequestService();
-initRequestPage();
+initSeekerServicesPage();
+initSeekerRequestPage();
+initProviderTasksPage();
 
-const cards = document.querySelectorAll(".imagesCard");
-if (cards.length > 0) {
-  fetchImages();
-}
+

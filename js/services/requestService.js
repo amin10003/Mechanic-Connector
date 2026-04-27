@@ -1,5 +1,35 @@
-// Refactor note: original request service logic moved to js/modules/services/requestService.js.
-// This compatibility file keeps the original path usable if referenced elsewhere.
-import { initRequestService } from "/js/modules/services/requestService.js";
+import {
+  addRequest,
+  getRequests,
+  updateRequestStatus,
+} from "../storage/requestRepository.js";
 
-initRequestService();
+export function createRequest(payload) {
+  return {
+    id: crypto.randomUUID(),
+    serviceType: payload.serviceType,
+    vehicleModel: payload.vehicleModel,
+    vehicleType: payload.vehicleType,
+    urgency: payload.urgency,
+    numberPlate: payload.numberPlate,
+    location: payload.location,
+    problemDescription: payload.problemDescription,
+    landmark: payload.landmark,
+    status: "Pending",
+    createdAt: new Date().toISOString(),
+  };
+}
+
+export function submitRequest(payload) {
+  const request = createRequest(payload);
+  addRequest(request);
+  return request;
+}
+
+export function listRequests() {
+  return getRequests();
+}
+
+export function setRequestStatus(requestId, status) {
+  updateRequestStatus(requestId, status);
+}
