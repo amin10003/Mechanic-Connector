@@ -1,13 +1,20 @@
- export class User{
+export class User {
+  constructor({
+    id = crypto.randomUUID(),
+    name,
+    email,
+    password,
+    location = "",
+  }) {
+    this.id = id;
+    this.name = name;
+    this.email = email;
+    this.password = password;
+    this.location = location;
+  }
 
-    constructor(name, email,password){
-        this.name = name,
-        this.email = email,
-        this.password = password
-    }
-
-    getRole(){
-        return 'User'
-    }
+  getRole() {
+    return "User";
+  }
 }
 

@@ -14,7 +14,13 @@ export function registerUser(role, user, confirmPassword) {
     return false;
   }
 
-  saveUser(role, user);
+  const normalizedUser = {
+    ...user,
+    id: user.id || crypto.randomUUID(),
+    location: user.location || user.address || "",
+  };
+
+  saveUser(role, normalizedUser);
   alert("Registration successful");
   return true;
 }

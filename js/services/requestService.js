@@ -3,10 +3,18 @@ import {
   getRequests,
   updateRequestStatus,
 } from "../storage/requestRepository.js";
+import { loadUser } from "../storage/userRepository.js";
+import { Request } from "../models/Request.js";
 
 export function createRequest(payload) {
-  return {
-    id: crypto.randomUUID(),
+  const seeker = loadUser("seeker");
+
+  return new Request({
+    id: payload.id || crypto.randomUUID(),
+    serviceSeekerId: payload.serviceSeekerId || seeker?.id || "",
+    garageId: payload.garageId || "",
+    serviceId: payload.serviceId || "",
+    paymentMethod: payload.paymentMethod || "",
     serviceType: payload.serviceType,
     vehicleModel: payload.vehicleModel,
     vehicleType: payload.vehicleType,
@@ -15,9 +23,9 @@ export function createRequest(payload) {
     location: payload.location,
     problemDescription: payload.problemDescription,
     landmark: payload.landmark,
-    status: "Pending",
+    status: payload.status || "Pending",
     createdAt: new Date().toISOString(),
-  };
+  });
 }
 
 export function submitRequest(payload) {
