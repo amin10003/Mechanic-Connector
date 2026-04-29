@@ -1,187 +1,162 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mechanic Connector</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Refactor note: centralized JS entry point for page/module loading -->
-    <script type="module" src="/js/main.js"></script>
-  </head>
-  <body>
-    <div
-    
-      id="cont"
-      class="min-h-screen p-6 m-0 text-xl bg-gray-100 flex flex-col justify-center items-center"
-    >
-      <div
-       class="block mx-auto bg-gray-200 p-6 shadow-xl rounded-md flex flex-col justify-between items-center"
-      >
-        <h1 class="text-3xl font-bold text-center text-[#333] montserrat">
-          Mechanic Connector
-        </h1>
-
-        <span
-          ><button
-            class="bg-gray-400 font-semibold hover:bg-gray-500 hover:scale-105 transform transition-all duration-200 rounded-xl px-2 text-white mt-4 py-2"
-          >
-            <a href="/html/serviceSeeker/log.html">Change User</a>
-          </button></span
-        >
-
-        <!-- Registration form -->
-
-        <section id="registrationSection">
-          <form id="ServiceRegister"class="grid grid-cols-2 gap-8 p-4 mt-4">
-            <div class="order-0 space-y-4 flex flex-col items-right">
-              <label for="Fullname" class="font-semibold text-2xl"
-                >Full Name</label
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mechanic Connector</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Refactor note: centralized JS entry point for page/module loading -->
+        <script type="module" src="/js/main.js"></script>
+    </head>
+    <body>
+        <div id="cont" class="min-h-screen p-6 m-0 text-xl bg-gray-100 flex flex-col justify-center items-center">
+            <div class="block mx-auto bg-gray-200 p-6 shadow-xl rounded-md flex flex-col justify-between items-center">
+                <h1 class="text-3xl font-bold text-center text-[#333] montserrat">
+                    Mechanic Connector
+                </h1>
+                <span>
+                    <button class="bg-gray-400 font-semibold hover:bg-gray-500 hover:scale-105 transform transition-all duration-200 rounded-xl px-2 text-white mt-4 py-2">
+                        <a href="/html/serviceSeeker/log.html">Change User</a>
+                    </button>
+                </span>
+                <div id="formMessage" class="hidden p-3 rounded-lg text-center font-semibold"></div>
+                <!-- Registration form -->
+                <section id="registrationSection">
+                    <form id="ServiceRegister" class="grid grid-cols-2 gap-8 p-4 mt-4">
+                        <div class="order-0 space-y-4 flex flex-col items-right">
+                            <label for="Fullname" class="font-semibold text-2xl">
+                                Full Name
+                            </label
               >
-              <input
-                id="Fullname"
-                type="text"
-                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
-                required
-              />
+                            <input
+                                id="Fullname"
+                                type="text"
+                                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
+                                required
+                            >
+                        </div>
+                        <div class="order-1 space-y-4 flex flex-col items-right">
+                            <label for="email" class="font-semibold text-2xl">Email</label>
+                            <input
+                                id="email"
+                                type="text"
+                                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
+                                required
+                            >
+                        </div>
+                        <div class="order-3 space-y-4 flex flex-col items-right">
+                            <label for="password" class="font-semibold text-2xl">
+                                Password
+                            </label
+              >
+                            <input
+                                id="password"
+                                type="password"
+                                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
+                                required
+                            >
+                        </div>
+                        <div class="order-4 space-y-4 flex flex-col items-right">
+                            <label for="Confirmpassword" class="font-semibold text-2xl">
+                                Confirm Password
+                            </label
+              >
+                            <input
+                                id="Confirmpassword"
+                                type="password"
+                                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
+                                required
+                            >
+                        </div>
+                        <div class="space-y-4 flex flex-col items-right">
+                            <label for="garage" class="font-semibold text-2xl">Garage</label>
+                            <input
+                                id="garage"
+                                type="text"
+                                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
+                                required
+                            >
+                        </div>
+                        <div class="order-4 space-y-4 flex flex-col items-right col-span-2 w-full">
+                            <label for="Services" class="font-semibold text-2xl">
+                                Services
+                            </label
+              >
+                            <select
+                                name="Service"
+                                id="services"
+                                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
+                                required
+                            >
+                                <option value="mechanic">Mechanics</option>
+                                <option value="Wiring">Wiring</option>
+                                <option value="All">All</option>
+                            </select>
+                        </div>
+                        <div class="order-2 space-y-4 flex flex-col items-right">
+                            <label for="location" class="font-semibold text-2xl">
+                                Location
+                            </label
+              >
+                            <select
+                                name="location"
+                                id="location"
+                                class="focus:outline-none focus:ring-2 p-2 focus:ring-blue-500 rounded w-full"
+                                required
+                            >
+                                <option value="nairobi">Nairobi</option>
+                                <option value="ombasa">Mombasa</option>
+                                <option value="mandera">Mandera</option>
+                                <option value="garissa">Garissa</option>
+                                <option value="nakuru">Nakuru</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="bg-blue-500 order-last col-span-2 block mx-auto font-semibold hover:bg-blue-600 hover:scale-105 transform transition-all duration-200 rounded-xl w-full py-3 text-white py-2">
+                            Register
+                        </button>
+                        <p class="block col-span-2 mx-auto mt-4 order-last">
+                            All ready have an account?
+                            <a id="logAnchor" href="#ServiceloginSection" class="underline font-semibold cursor-pointer">
+                                login
+                            </a>
+                        </p>
+                    </form>
+                </section>
+                <section id="ServiceloginSection" class="w-[40vw] hidden">
+                    <form id="logInForm" class="flex flex-col gap-8 p-4 mt-2">
+                        <div class="space-y-2 flex flex-col items-right">
+                            <label for="email" class="font-semibold text-2xl">Email</label>
+                            <input
+                                id="logEmail"
+                                type="text"
+                                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
+                                required
+                            >
+                        </div>
+                        <div class="space-y-2 flex flex-col items-right">
+                            <label for="password" class="font-semibold text-2xl">
+                                Password
+                            </label
+              >
+                            <input
+                                id="logPassword"
+                                type="password"
+                                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
+                                required
+                            >
+                        </div>
+                        <button type="submit" class="bg-blue-500 order-last block mx-auto font-semibold hover:bg-blue-600 hover:scale-105 transform transition-all duration-200 rounded-xl w-full py-3 text-white py-2">
+                            Login
+                        </button>
+                        <p class="order-last block mx-auto">
+                            Have no an account?
+                            <a id="RegisterAnchor" href="#registrationSection" class="underline font-semibold cursor-pointer">
+                                Signup
+                            </a>
+                        </p>
+                    </form>
+                </section>
             </div>
-            <div class="order-1 space-y-4 flex flex-col items-right">
-              <label for="email" class="font-semibold text-2xl">Email</label>
-              <input
-                id="email"
-                type="text"
-                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
-                required
-              />
-            </div>
-            <div class="order-3 space-y-4 flex flex-col items-right">
-              <label for="password" class="font-semibold text-2xl"
-                >Password</label
-              >
-              <input
-                id="password"
-                type="password"
-                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
-                required
-              />
-            </div>
-            <div class="order-4 space-y-4 flex flex-col items-right">
-              <label for="Confirmpassword" class="font-semibold text-2xl"
-                >Confirm Password</label
-              >
-              <input
-                id="Confirmpassword"
-                type="password"
-                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
-                required
-              />
-            </div>
-            <div class="space-y-4 flex flex-col items-right">
-              <label for="garage" class="font-semibold text-2xl">Garage</label>
-              <input
-                id="garage"
-                type="text"
-                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
-                required
-              />
-            </div>
-            <div
-              class="order-4 space-y-4 flex flex-col items-right col-span-2 w-full"
-            >
-              <label for="Services" class="font-semibold text-2xl"
-                >Services</label
-              >
-              <select
-                name="Service"
-                id="services"
-                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
-                required
-              >
-                <option value="mechanic">Mechanics</option>
-                <option value="Wiring">Wiring</option>
-                <option value="All">All</option>
-              </select>
-            </div>
-            <div class="order-2 space-y-4 flex flex-col items-right">
-              <label for="location" class="font-semibold text-2xl"
-                >Location</label
-              >
-              <select
-                name="location"
-                id="location"
-                class="focus:outline-none focus:ring-2 p-2 focus:ring-blue-500 rounded w-full"
-                required
-              >
-                <option value="nairobi">Nairobi</option>
-                <option value="ombasa">Mombasa</option>
-                <option value="mandera">Mandera</option>
-                <option value="garissa">Garissa</option>
-                <option value="nakuru">Nakuru</option>
-              </select>
-            </div>
-
-            <button
-              type="submit"
-              class="bg-blue-500 order-last col-span-2 block mx-auto font-semibold hover:bg-blue-600 hover:scale-105 transform transition-all duration-200 rounded-xl w-full py-3 text-white py-2"
-            >
-              Register
-            </button>
-
-            <p class="block col-span-2 mx-auto mt-4 order-last">
-              All ready have an account?
-              <a
-                id="logAnchor"
-                href="#ServiceloginSection"
-                class="underline font-semibold cursor-pointer"
-              >
-                login
-              </a>
-            </p>
-          </form>
-        </section>
-
-        <section id="ServiceloginSection" class="w-[40vw] hidden">
-          <form id="logInForm" class="flex flex-col gap-8 p-4 mt-2">
-            <div class="space-y-2 flex flex-col items-right">
-              <label for="email" class="font-semibold text-2xl">Email</label>
-              <input
-                id="logEmail"
-                type="text"
-                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
-                required
-              />
-            </div>
-
-            <div class="space-y-2 flex flex-col items-right">
-              <label for="password" class="font-semibold text-2xl"
-                >Password</label
-              >
-              <input
-                id="logPassword"
-                type="password"
-                class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full p-2"
-                required
-              />
-            </div>
-
-            <button
-              type="submit"
-              class="bg-blue-500 order-last block mx-auto font-semibold hover:bg-blue-600 hover:scale-105 transform transition-all duration-200 rounded-xl w-full py-3 text-white py-2"
-            >
-              Login
-            </button>
-            <p class="order-last block mx-auto">
-              Have no an account?
-              <a
-                id="RegisterAnchor"
-                href="#registrationSection"
-                class="underline font-semibold cursor-pointer"
-              >
-                Signup
-              </a>
-            </p>
-          </form>
-        </section>
-      </div>
-    </div>
-  </body>
+        </div>
+    </body>
 </html>

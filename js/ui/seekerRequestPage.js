@@ -1,4 +1,5 @@
 import { submitRequest } from "../services/requestService.js";
+import { showMessage } from "./message.js";
 
 function setSelectedServiceHeading() {
   const heading = document.getElementById("selectedService");
@@ -38,6 +39,6 @@ export function initSeekerRequestPage() {
     });
 
     requestForm.reset();
-    alert("Service request submitted");
+    showMessage("Service request submitted");
   });
 }

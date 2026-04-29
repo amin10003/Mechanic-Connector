@@ -1,117 +1,129 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mechanic Connector</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Refactor note: centralized JS entry point for page/module loading -->
-    <script type="module" src="/js/main.js"></script>
-  </head>
-
-  <body>
-    <div
-      id="cont"
-      class="min-h-screen p-6 m-0 text-xl bg-gray-100 flex flex-col justify-center items-center"
-    >
-      <div
-        class="block mx-auto bg-gray-200 p-6 shadow-xl rounded-md flex flex-col justify-between items-center"
-      >
-        <h1 class="text-3xl font-bold text-center text-[#333]">
-          Mechanic Connector
-        </h1>
-
-        <span>
-          <button
-            class="bg-gray-400 font-semibold hover:bg-gray-500 hover:scale-105 transition-all duration-200 rounded-xl px-2 text-white mt-4 py-2"
-          >
-            <a href="/html/serviceProvider/log.html">Change User</a>
-          </button>
-        </span>
-
-        <!-- ================= REGISTER FORM ================= -->
-        <section id="CustomerSection">
-          <form id="CustomerRegister" class="grid grid-cols-2 gap-8 p-4 mt-4">
-
-            <div>
-              <label class="font-semibold text-2xl">Full Name</label>
-              <input id="Fullname" type="text" class="p-2 w-full rounded" required />
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mechanic Connector</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Refactor note: centralized JS entry point for page/module loading -->
+        <script type="module" src="/js/main.js"></script>
+    </head>
+    <body>
+        <div id="cont" class="min-h-screen p-6 m-0 text-xl bg-gray-100 flex flex-col justify-center items-center">
+            <div class="block mx-auto bg-gray-200 p-6 shadow-xl rounded-md flex flex-col justify-between items-center">
+                <h1 class="text-3xl font-bold text-center text-[#333]">
+                    Mechanic Connector
+                </h1>
+                <span>
+                    <button class="bg-gray-400 font-semibold hover:bg-gray-500 hover:scale-105 transition-all duration-200 rounded-xl px-2 text-white mt-4 py-2">
+                        <a href="/html/serviceProvider/log.html">Change User</a>
+                    </button>
+                </span>
+                <div id="formMessage" class="hidden p-3 rounded-lg text-center font-semibold"></div>
+                <!-- ================= REGISTER FORM ================= -->
+                <section id="CustomerSection">
+                    <form id="CustomerRegister" class="grid grid-cols-2 gap-8 p-4 mt-4">
+                        <div>
+                            <label class="font-semibold text-2xl">Full Name</label>
+                            <input
+                                id="Fullname"
+                                type="text"
+                                class="p-2 w-full rounded"
+                                required
+                            >
+                        </div>
+                        <div>
+                            <label class="font-semibold text-2xl">Account Type</label>
+                            <select id="services" class="p-2 w-full rounded">
+                                <option value="personal">Personal</option>
+                                <option value="business">Business</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="font-semibold text-2xl">Email</label>
+                            <input
+                                id="email"
+                                type="email"
+                                class="p-2 w-full rounded"
+                                required
+                            >
+                        </div>
+                        <div>
+                            <label class="font-semibold text-2xl">Phone Number</label>
+                            <input
+                                id="phoneNumber"
+                                type="number"
+                                class="p-2 w-full rounded"
+                                required
+                            >
+                        </div>
+                        <div>
+                            <label class="font-semibold text-2xl">Password</label>
+                            <input
+                                id="password"
+                                type="password"
+                                class="p-2 w-full rounded"
+                                required
+                            >
+                        </div>
+                        <div>
+                            <label class="font-semibold text-2xl">Confirm Password</label>
+                            <input
+                                id="Confirmpassword"
+                                type="password"
+                                class="p-2 w-full rounded"
+                                required
+                            >
+                        </div>
+                        <div class="col-span-2">
+                            <label class="font-semibold text-2xl">Default Address</label>
+                            <input
+                                id="defaultyAddress"
+                                type="text"
+                                class="p-2 w-full rounded"
+                                required
+                            >
+                        </div>
+                        <button class="bg-blue-500 col-span-2 text-white py-2 rounded">
+                            Register
+                        </button>
+                        <p class="col-span-2 text-center">
+                            Already have an account?
+                            <a href="#" id="loginAnchor" class="underline font-semibold">Login</a>
+                        </p>
+                    </form>
+                </section>
+                <!-- ================= LOGIN FORM ================= -->
+                <section id="loginCustomerSection" class="w-[40vw] hidden">
+                    <form id="logInForm" class="flex flex-col gap-6 p-4">
+                        <div>
+                            <label class="font-semibold text-2xl">Email</label>
+                            <input
+                                id="logEmail"
+                                type="text"
+                                class="p-2 w-full rounded"
+                                required
+                            >
+                        </div>
+                        <div>
+                            <label class="font-semibold text-2xl">Password</label>
+                            <input
+                                id="logPassword"
+                                type="password"
+                                class="p-2 w-full rounded"
+                                required
+                            >
+                        </div>
+                        <button type="submit" class="bg-blue-500 text-white py-2 rounded">
+                            Login
+                        </button>
+                        <p class="text-center">
+                            No account?
+                            <a href="#" id="registerAnchor" class="underline font-semibold">Signup</a>
+                        </p>
+                    </form>
+                </section>
             </div>
-             <div>
-              <label class="font-semibold text-2xl">Account Type</label>
-              <select id="services" class="p-2 w-full rounded">
-                <option value="personal">Personal</option>
-                <option value="business">Business</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="font-semibold text-2xl">Email</label>
-              <input id="email" type="email" class="p-2 w-full rounded" required />
-            </div>
-
-            <div>
-              <label class="font-semibold text-2xl">Phone Number</label>
-              <input id="phoneNumber" type="number" class="p-2 w-full rounded" required />
-            </div>
-
-            <div>
-              <label class="font-semibold text-2xl">Password</label>
-              <input id="password" type="password" class="p-2 w-full rounded" required />
-            </div>
-
-            <div>
-              <label class="font-semibold text-2xl">Confirm Password</label>
-              <input id="Confirmpassword" type="password" class="p-2 w-full rounded" required />
-            </div>
-
-            <div class="col-span-2">
-              <label class="font-semibold text-2xl">Default Address</label>
-              <input id="defaultyAddress" type="text" class="p-2 w-full rounded" required />
-            </div>
-
-           
-
-            <button class="bg-blue-500 col-span-2 text-white py-2 rounded">
-              Register
-            </button>
-
-            <p class="col-span-2 text-center">
-              Already have an account?
-              <a href="#" id="loginAnchor" class="underline font-semibold">Login</a>
-            </p>
-
-          </form>
-        </section>
-
-        <!-- ================= LOGIN FORM ================= -->
-        <section id="loginCustomerSection" class="w-[40vw] hidden">
-          <form id="logInForm" class="flex flex-col gap-6 p-4">
-
-            <div>
-              <label class="font-semibold text-2xl">Email</label>
-              <input id="logEmail" type="text" class="p-2 w-full rounded" required />
-            </div>
-
-            <div>
-              <label class="font-semibold text-2xl">Password</label>
-              <input id="logPassword" type="password" class="p-2 w-full rounded" required />
-            </div>
-
-            <button type="submit" class="bg-blue-500 text-white py-2 rounded">
-              Login
-            </button>
-
-            <p class="text-center">
-              No account?
-              <a href="#" id="registerAnchor" class="underline font-semibold">Signup</a>
-            </p>
-
-          </form>
-        </section>
-
-      </div>
-    </div>
-  </body>
+        </div>
+    </body>
 </html>
